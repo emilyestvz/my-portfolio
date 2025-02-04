@@ -6,8 +6,8 @@ import Avatar from '../../../../assets/perfil.jpg'
 const Hero = () => {
 
     // Styled Div
-    const StyledHero = styled('div')(() => ({
-        backgroundColor: 'black',
+    const StyledHero = styled('div')(({theme}) => ({
+        backgroundColor: theme.palette.primary.main,
         height: '100vh',
     }))
 
@@ -30,18 +30,19 @@ const Hero = () => {
                     </Grid>
 
                     <Grid item xs={12} md={8}>
-                        <Typography color='primary' variant='h1' textAlign='center'>Emily Dias</Typography>
-                        <Typography color='primary' variant='h2' textAlign='center'>I'm a Developer FullStack</Typography>
+                        <Typography color='primary.contrastText' variant='h1' textAlign='center'>Emily Dias</Typography>
+                        <Typography color='primary.contrastText' variant='h2' textAlign='center'>I'm a Developer FullStack</Typography>
                         
                         <Grid container display='flex' justifyContent='center'>
                             <Grid item xs={12} md={4} display='flex' justifyContent='center'>
-                                <Button>
+                                <Button color='secondary'>
                                     <DownloadIcon />
                                     Download CV
                                 </Button>
                             </Grid>
+                            
                             <Grid item xs={12} md={4} display='flex' justifyContent='center'>
-                                <Button>
+                                <Button color='secondary'>
                                     <AlternateEmailIcon />
                                     Contact Me
                                 </Button>
