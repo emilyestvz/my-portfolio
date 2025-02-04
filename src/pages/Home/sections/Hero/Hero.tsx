@@ -22,7 +22,7 @@ const Hero = () => {
         <StyledHero>
 
             {/*Para responsividade*/}
-            <Container>
+            <Container maxWidth='lg'>
         
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={4}>
@@ -33,14 +33,14 @@ const Hero = () => {
                         <Typography color='primary' variant='h1' textAlign='center'>Emily Dias</Typography>
                         <Typography color='primary' variant='h2' textAlign='center'>I'm a Developer FullStack</Typography>
                         
-                        <Grid container>
-                            <Grid item xs={12} md={6} display='flex' justifyContent='center'>
+                        <Grid container display='flex' justifyContent='center'>
+                            <Grid item xs={12} md={4} display='flex' justifyContent='center'>
                                 <Button>
                                     <DownloadIcon />
                                     Download CV
                                 </Button>
                             </Grid>
-                            <Grid item xs={12} md={6} display='flex' justifyContent='center'>
+                            <Grid item xs={12} md={4} display='flex' justifyContent='center'>
                                 <Button>
                                     <AlternateEmailIcon />
                                     Contact Me
