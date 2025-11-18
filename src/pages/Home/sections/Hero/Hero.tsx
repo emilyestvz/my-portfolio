@@ -1,29 +1,29 @@
-import { Container, Box, styled, Typography, AppBar, Toolbar, IconButton } from '@mui/material'
-import DownloadIcon from '@mui/icons-material/Download';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import { Container, Box, styled, Typography, AppBar, Toolbar, IconButton } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import Avatar from '../../../../assets/perfil.jpg'
-import StyledButton from '../../../../components/StyledButton/StyledButton';
 
 // Navbar fixa no topo
 const StyledNavbar = styled(AppBar)(() => ({
-    background: 'rgba(15, 15, 20, 0.95)',
-    backdropFilter: 'blur(10px)',
+    background: 'rgba(0, 0, 1, 0.95)',
+    backdropFilter: 'blur(20px)',
     boxShadow: '0 2px 20px rgba(0, 0, 0, 0.5)',
     borderBottom: '1px solid rgba(80, 80, 100, 0.2)',
 }))
 
-// Background gótico escuro
+// Background 
 const StyledHero = styled('div')(() => ({
-    background: `linear-gradient(135deg, #0f0f14 0%, #18181d 50%, #0d0d12 100%)`,
+    background: 'url(/src/assets/bg.gif)',
     minHeight: '100vh',
-    position: 'relative',
-    overflow: 'hidden',
+    backgroundSize: 'cover',           // Cobrir toda a tela
+    backgroundPosition: 'center',      // Centralizar a imagem
+    backgroundRepeat: 'no-repeat',     // Não repetir
+    backgroundAttachment: 'fixed',   // Fixar o background durante o scroll - Parallax
+    width: '100%',
     display: 'flex',
     alignItems: 'center',
     paddingTop: '80px',
+    position: 'relative', 
     '&::before': {
         content: '""',
         position: 'absolute',
@@ -51,42 +51,8 @@ const StyledHero = styled('div')(() => ({
     }
 }))
 
-// Avatar com efeito sutil
-const StyledImg = styled('img')(() => ({
-    width: '100%',
-    borderRadius: '50%',
-    border: '3px solid rgba(100, 100, 120, 0.4)',
-    boxShadow: `
-        0 0 30px rgba(80, 80, 100, 0.5),
-        0 0 60px rgba(60, 60, 80, 0.3),
-        inset 0 0 40px rgba(50, 50, 70, 0.2)
-    `,
-    animation: 'glow 3s ease-in-out infinite',
-    transition: 'all 0.3s ease',
-    '&:hover': {
-        transform: 'scale(1.05)',
-        boxShadow: `
-            0 0 40px rgba(100, 100, 120, 0.7),
-            0 0 80px rgba(80, 80, 100, 0.5)
-        `,
-    },
-    '@keyframes glow': {
-        '0%, 100%': {
-            boxShadow: `
-                0 0 30px rgba(80, 80, 100, 0.5),
-                0 0 60px rgba(60, 60, 80, 0.3)
-            `,
-        },
-        '50%': {
-            boxShadow: `
-                0 0 40px rgba(100, 100, 120, 0.6),
-                0 0 80px rgba(80, 80, 100, 0.4)
-            `,
-        },
-    }
-}))
 
-// Texto com gradiente sutil
+// Texto com gradiente
 const NeonText = styled(Typography)(() => ({
     background: 'linear-gradient(135deg, #d0d0d5 0%, #9090a0 50%, #d0d0d5 100%)',
     backgroundSize: '200% 200%',
@@ -105,18 +71,18 @@ const NeonText = styled(Typography)(() => ({
     }
 }))
 
-// Subtítulo gótico
+// Subtítulo 
 const GothicSubtitle = styled(Typography)(() => ({
     color: 'rgba(180, 180, 200, 0.9)',
     fontWeight: 300,
     letterSpacing: '6px',
     textTransform: 'uppercase',
     textAlign: 'center',
-    fontSize: '1.2rem',
+    fontSize: '1rem',
     position: 'relative',
     '&::before, &::after': {
         content: '"◆"',
-        color: 'rgba(120, 120, 140, 0.7)',
+        color: "rgba(120, 120, 140, 0.7)",
         margin: '0 15px',
         fontSize: '0.8rem',
         
@@ -151,9 +117,9 @@ const Hero = () => {
     return (
         <>
             {/* Navbar */}
-            <StyledNavbar position="fixed">
+            <StyledNavbar position='fixed'>
                 <Toolbar sx={{ justifyContent: 'space-between' }}>
-                    <Typography variant="h6" sx={{ 
+                    <Typography variant='h6' sx={{ 
                         fontWeight: 700, 
                         color: 'rgba(200, 200, 220, 0.95)',
                         letterSpacing: '2px'
@@ -162,16 +128,15 @@ const Hero = () => {
                     </Typography>
                     
                     <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
-                        <NavLink href="#about">About</NavLink>
-                        <NavLink href="#projects">Projects</NavLink>
-                        <NavLink href="#skills">Skills</NavLink>
-                        <NavLink href="#contact">Contact</NavLink>
+                        <NavLink href='#projects'>Projects</NavLink>
+                        <NavLink href='#about'>About</NavLink>
+                        <NavLink href='#contact'>Contact</NavLink>
                     </Box>
 
                     <Box sx={{ display: 'flex', gap: 1 }}>
                         <IconButton 
-                            href="https://github.com/emilyestvz" 
-                            target="_blank"
+                            href='https://github.com/emilyestvz' 
+                            target='_blank'
                             sx={{ 
                                 color: 'rgba(200, 200, 220, 0.8)',
                                 '&:hover': { 
@@ -183,8 +148,8 @@ const Hero = () => {
                             <GitHubIcon />
                         </IconButton>
                         <IconButton 
-                            href="https://www.linkedin.com/in/emilycristinydias" 
-                            target="_blank"
+                            href='https://www.linkedin.com/in/emilycristinydias' 
+                            target='_blank'
                             sx={{ 
                                 color: 'rgba(200, 200, 220, 0.8)',
                                 '&:hover': { 
@@ -196,8 +161,8 @@ const Hero = () => {
                             <LinkedInIcon />
                         </IconButton>
                         <IconButton 
-                            href="https://instagram.com" 
-                            target="_blank"
+                            href='https://instagram.com' 
+                            target='_blank'
                             sx={{ 
                                 color: 'rgba(200, 200, 220, 0.8)',
                                 '&:hover': { 
@@ -218,39 +183,19 @@ const Hero = () => {
                     <Box sx={{ 
                         display: 'flex', 
                         flexDirection: { xs: 'column', md: 'row' }, 
-                        alignItems: 'center', 
+                        alignItems: { xs: 'center', md: 'flex-start' }, 
+                        justifyContent: { xs: 'center', md: 'flex-end' },
+                        paddingTop: { xs: 4, md: 8 },
                         gap: 6,
-                        py: 4
+                        py: 35,
+                        px: 13
                     }}>
-                        {/* Avatar Section */}
-                        <Box sx={{ 
-                            width: { xs: '280px', md: '350px' },
-                            position: 'relative'
-                        }}>
-                            <StyledImg src={Avatar} alt="Emily Estevez" />
-                            
-                            {/* Círculo decorativo ao redor do avatar */}
-                            <Box sx={{
-                                position: 'absolute',
-                                top: '50%',
-                                left: '50%',
-                                transform: 'translate(-50%, -50%)',
-                                width: '120%',
-                                height: '120%',
-                                border: '1px solid rgba(100, 100, 120, 0.2)',
-                                borderRadius: '50%',
-                                animation: 'rotate 20s linear infinite',
-                                '@keyframes rotate': {
-                                    from: { transform: 'translate(-50%, -50%) rotate(0deg)' },
-                                    to: { transform: 'translate(-50%, -50%) rotate(360deg)' },
-                                }
-                            }} />
-                        </Box>
 
                         {/* Text Section */}
                         <Box sx={{ 
-                            width: { xs: '100%', md: '67%' }, 
-                            textAlign: { xs: 'center', md: 'left' }
+                            width: { xs: '100%', md: '50%' }, 
+                            textAlign: { xs: 'center', md: 'left' },
+                            paddingRight: { xs: 0, md: 4 }
                         }}>
                             <NeonText variant='h1' sx={{ 
                                 fontSize: { xs: '2.5rem', md: '4rem' },
@@ -271,12 +216,12 @@ const Hero = () => {
                                     mt: 3,
                                     mb: 4,
                                     fontStyle: 'italic',
-                                    fontSize: '1rem',
+                                    fontSize: '15px',
                                     letterSpacing: '1px',
                                     textAlign: 'center',
                                 }}
                             >
-                                "Transforming darkness into code, crafting digital experiences"
+                                'Transforming darkness into code, crafting digital experiences'
                             </Typography>
 
                             <Box sx={{ 

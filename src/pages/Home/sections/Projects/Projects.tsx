@@ -1,22 +1,58 @@
-
 import { Container, Grid, Card, CardMedia, CardContent, CardActions, Typography, Chip, Button, Box, styled } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LaunchIcon from '@mui/icons-material/Launch';
 
-const StyledProjects = styled('div')(({ theme }) => ({
-    backgroundColor: theme.palette.background.default,
+const StyledProjects = styled('div')(() => ({
+    background: 'linear-gradient(135deg, #040407ff 0%, #000000ff 50%, #0f0f14 100%)',
     minHeight: '100vh',
-    padding: theme.spacing(8, 0),
+    padding: '80px 0',
+    position: 'relative',
+    "&::before": {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundImage: `radial-gradient(circle at 30% 40%, rgba(60, 60, 80, 0.1) 0%, transparent 50%)`,
+        pointerEvents: 'none',
+    }
 }));
 
-const StyledCard = styled(Card)(({ theme }) => ({
+const StyledCard = styled(Card)(() => ({
     height: '100%',
+    width: '80%',
     display: 'flex',
     flexDirection: 'column',
-    transition: 'transform 0.3s ease-in-out',
+    background: 'rgba(25, 25, 35, 0.6)',
+    backdropFilter: 'blur(10px)',
+    border: '1px solid rgba(100, 100, 120, 0.2)',
+    borderRadius: '16px',
+    transition: 'all 0.3s ease-in-out',
     '&:hover': {
         transform: 'translateY(-8px)',
+        border: '1px solid rgba(120, 120, 140, 0.4)',
+        boxShadow: '0 8px 30px rgba(60, 60, 80, 0.4)',
     },
+}));
+
+const SectionTitle = styled(Typography)(() => ({
+    background: 'linear-gradient(135deg, #d0d0d5 0%, #9090a0 50%, #d0d0d5 100%)',
+    backgroundSize: '200% 200%',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    fontWeight: 900,
+    letterSpacing: '3px',
+    textTransform: 'uppercase',
+}));
+
+const DecorativeLine = styled(Box)(() => ({
+    height: '2px',
+    width: '100px',
+    background: 'linear-gradient(90deg, transparent, rgba(100, 100, 120, 0.6), transparent)',
+    margin: '20px auto',
+    boxShadow: '0 0 10px rgba(80, 80, 100, 0.3)',
 }));
 
 const projects = [
@@ -46,7 +82,7 @@ const projects = [
     },
     {
         title: 'City 3D',
-        description: 'Clone de rede social com feed, stories, mensagens e notificações em tempo real.',
+        description: 'Modelo 3D interativo de uma cidade utilizando Three.js, permitindo navegação e visualização em 3D.',
         image: '/src/assets/city3d.png',
         tags: ['Three.js', 'JavaScript', 'WebGL', '3D Modeling'],
         github: 'https://github.com/emilyestvz/city-three.js',
@@ -64,51 +100,96 @@ const projects = [
 
 const Projects = () => {
     return (
-        <StyledProjects>
+        <StyledProjects id='projects'>
             <Container maxWidth='lg'>
-                <Box sx={{ textAlign: 'center', mb: 6 }}>
-                    <Typography variant='h2' gutterBottom>
-                        Meus Projetos
-                    </Typography>
-                    <Typography variant='h6' color='text.secondary'>
-                        Confira alguns dos projetos que desenvolvi
-                    </Typography>
+                <Box sx={{ textAlign: 'center', mb: 8 }}>
+                    <SectionTitle variant='h2'>
+                        Projects
+                    </SectionTitle>
+                    <DecorativeLine />
                 </Box>
 
-                <Grid container spacing={4}>
+                <Box sx={{ 
+                    display: 'flex',
+                    overflowX: 'auto',
+                    pt: 1,
+                    pb: 4,
+                    px: 4,
+                    '&::-webkit-scrollbar': {
+                        height: '8px',
+                    },
+                    '&::-webkit-scrollbar-track': {
+                        background: 'rgba(100, 100, 120, 0.2)',
+                        borderRadius: '4px',
+                    },
+                    '&::-webkit-scrollbar-thumb': {
+                        background: 'rgba(150, 150, 170, 0.5)',
+                        borderRadius: '4px',
+                        '&:hover': {
+                            background: 'rgba(180, 180, 200, 0.7)',
+                        }
+                    }
+                }}>
                     {projects.map((project, index) => (
-                        <Grid item xs={12} sm={6} md={4} key={index}>
+                        <Box key={index} sx={{ minWidth: '500px', flex: 'auto' }}>
                             <StyledCard>
                                 <CardMedia
                                     component='img'
                                     height='200'
                                     image={project.image}
                                     alt={project.title}
+                                    sx={{ 
+                                        filter: 'grayscale(20%) brightness(0.8)',
+                                        transition: 'all 0.3s ease',
+                                        '&:hover': {
+                                            filter: 'grayscale(0%) brightness(1)',
+                                        }
+                                    }}
                                 />
+
                                 <CardContent sx={{ flexGrow: 1 }}>
-                                    <Typography gutterBottom variant='h5' component='h2'>
+                                    <Typography 
+                                        gutterBottom 
+                                        variant='h5' 
+                                        component='h2'
+                                        sx={{ color: 'rgba(200, 200, 220, 0.95)', fontWeight: 600 }}
+                                    >
                                         {project.title}
                                     </Typography>
-                                    <Typography variant='body2' color='text.secondary' paragraph>
+                                    <Typography 
+                                        variant='body2' 
+                                        paragraph
+                                        sx={{ color: 'rgba(150, 150, 170, 0.7)' }}
+                                    >
                                         {project.description}
                                     </Typography>
+
                                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                                         {project.tags.map((tag, i) => (
                                             <Chip 
                                                 key={i} 
                                                 label={tag} 
-                                                size='small' 
-                                                color='primary' 
-                                                variant='outlined' 
+                                                size='small'
+                                                sx={{
+                                                    background: 'rgba(100, 100, 120, 0.2)',
+                                                    color: 'rgba(180, 180, 200, 0.9)',
+                                                    border: '1px solid rgba(100, 100, 120, 0.3)',
+                                                    fontWeight: 500,
+                                                }}
                                             />
                                         ))}
                                     </Box>
                                 </CardContent>
+                                
                                 <CardActions>
                                     <Button 
                                         size='small' 
                                         startIcon={<GitHubIcon />} 
                                         href={project.github}
+                                        sx={{ 
+                                            color: 'rgba(180, 180, 200, 0.8)',
+                                            '&:hover': { color: '#ffffff' }
+                                        }}
                                     >
                                         Código
                                     </Button>
@@ -116,17 +197,20 @@ const Projects = () => {
                                         size='small' 
                                         startIcon={<LaunchIcon />} 
                                         href={project.demo}
+                                        sx={{ 
+                                            color: 'rgba(180, 180, 200, 0.8)',
+                                            '&:hover': { color: '#ffffff' }
+                                        }}
                                     >
                                         Demo
                                     </Button>
                                 </CardActions>
                             </StyledCard>
-                        </Grid>
+                        </Box>
                     ))}
-                </Grid>
+                </Box>
             </Container>
         </StyledProjects>
     );
 };
-
 export default Projects;
