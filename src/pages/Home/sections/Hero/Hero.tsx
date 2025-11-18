@@ -1,58 +1,55 @@
-import { Button, Container, Grid, styled, Typography } from '@mui/material'
+import { Container, Box, styled, Typography } from '@mui/material'
 import DownloadIcon from '@mui/icons-material/Download';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import Avatar from '../../../../assets/perfil.jpg'
+import StyledButton from '../../../../components/StyledButton/StyledButton';
+
+// Styled Div (declarado fora do render para evitar criação em cada render)
+const StyledHero = styled('div')(({theme}) => ({
+    backgroundColor: theme.palette.primary.main,
+    height: '100vh',
+}))
+
+// Styled Imagem do Avatar (fora do render)
+const StyledImg = styled('img')(() => ({
+    width: '100%',
+    borderRadius: '50%',
+}))
 
 const Hero = () => {
-
-    // Styled Div
-    const StyledHero = styled('div')(({theme}) => ({
-        backgroundColor: theme.palette.primary.main,
-        height: '100vh',
-    }))
-
-    // Styled Imagem do Avatar
-    const StyledImg = styled('img')(() => ({
-        width: '100%',
-        borderRadius: '50%',
-    }))
 
     return (
      <>
         <StyledHero>
 
             {/*Para responsividade*/}
-            <Container maxWidth='lg'>
-        
-                <Grid container spacing={2}>
-                    <Grid item xs={12} md={4}>
-                        <StyledImg src= {Avatar} />
-                    </Grid>
+                {/*Para responsividade*/}
+                <Container maxWidth='lg'>
+                    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', gap: 4, py: 4 }}>
+                        <Box sx={{ width: { xs: '100%', md: '33%' } }}>
+                            <StyledImg src={Avatar} />
+                        </Box>
 
-                    <Grid item xs={12} md={8}>
-                        <Typography color='primary.contrastText' variant='h1' textAlign='center'>Emily Dias</Typography>
-                        <Typography color='primary.contrastText' variant='h2' textAlign='center'>I'm a Developer FullStack</Typography>
-                        
-                        <Grid container display='flex' justifyContent='center'>
-                            <Grid item xs={12} md={4} display='flex' justifyContent='center'>
-                                <Button color='secondary'>
+                        <Box sx={{ width: { xs: '100%', md: '67%' }, textAlign: { xs: 'center', md: 'left' } }}>
+                            <Typography color='primary.contrastText' variant='h1'>Emily Dias</Typography>
+                            <Typography color='primary.contrastText' variant='h2'>I'm a Developer FullStack</Typography>
+
+                            <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-start' }, gap: 2, mt: 3 }}>
+                                <StyledButton>
                                     <DownloadIcon />
                                     Download CV
-                                </Button>
-                            </Grid>
-                            
-                            <Grid item xs={12} md={4} display='flex' justifyContent='center'>
-                                <Button color='secondary'>
+                                </StyledButton>
+
+                                <StyledButton>
                                     <AlternateEmailIcon />
                                     Contact Me
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    
-                </Grid>
-            </Container>
-        </StyledHero>
+                                </StyledButton>
+                            </Box>
+                        </Box>
+
+                    </Box>
+        </Container>
+    </StyledHero>
      </>
     )
   }
