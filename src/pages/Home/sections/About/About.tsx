@@ -5,7 +5,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 
 const StyledAbout = styled('div')(() => ({
-    background: 'linear-gradient(135deg, #0f0f14 0%, #18181d 50%, #0d0d12 100%)',
+    background: 'linear-gradient(135deg, #b9b9baff 0%, #7a7a7dff 50%, #898989ff 100%)',
     minHeight: '100vh',
     display: 'flex',
     alignItems: 'center',
@@ -23,24 +23,8 @@ const StyledAbout = styled('div')(() => ({
     }
 }));
 
-const InfoCard = styled(Box)(() => ({
-    padding: '30px',
-    height: '100%',
-    textAlign: 'center',
-    background: 'rgba(25, 25, 35, 0.6)',
-    backdropFilter: 'blur(10px)',
-    border: '1px solid rgba(100, 100, 120, 0.2)',
-    borderRadius: '16px',
-    transition: 'all 0.3s ease-in-out',
-    '&:hover': {
-        transform: 'translateY(-8px)',
-        border: '1px solid rgba(120, 120, 140, 0.4)',
-        boxShadow: '0 8px 30px rgba(60, 60, 80, 0.4)',
-    },
-}));
-
 const SectionTitle = styled(Typography)(() => ({
-    background: 'linear-gradient(135deg, #d0d0d5 0%, #9090a0 50%, #d0d0d5 100%)',
+    background: 'linear-gradient(135deg, #020204ff 0%, #2e2e2fff 50%, #1f1f21ff 100%)',
     backgroundSize: '200% 200%',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
@@ -53,7 +37,7 @@ const SectionTitle = styled(Typography)(() => ({
 const DecorativeLine = styled(Box)(() => ({
     height: '2px',
     width: '100px',
-    background: 'linear-gradient(90deg, transparent, rgba(100, 100, 120, 0.6), transparent)',
+    background: 'linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.6), transparent)',
     margin: '20px auto',
     boxShadow: '0 0 10px rgba(80, 80, 100, 0.3)',
 }));
@@ -70,7 +54,7 @@ const AboutSkills = () => {
         <StyledAbout id='about'>
             <Container maxWidth='lg'>
                 {/* SEÇÃO ABOUT */}
-                <Box sx={{ textAlign: 'center', mb: 4 }}>
+                <Box sx={{ textAlign: 'center', mb: 0 }}>
                     <SectionTitle variant='h2'>
                         About Me
                     </SectionTitle>
@@ -86,19 +70,18 @@ const AboutSkills = () => {
                         borderRadius: '16px',
                     }}
                 >
-                    <Typography variant='body1' paragraph sx={{ color: 'rgba(180, 180, 200, 0.9)', fontSize: '1.1rem', lineHeight: 1.8 }}>
+                    <Typography variant='body1' paragraph sx={{ color: 'rgba(3, 1, 1, 0.9)', fontSize: '1.2rem', lineHeight: 1.8 }}>
                         Atualmente em transição de carreira para a área de tecnologia, graduando em Engenharia de Software e 
                         busco oportunidades para aplicar minhas habilidades em desenvolvimento FullStack utilizando stacks modernas. 
                         Minha vivência internacional na Espanha contribuiu para o desenvolvimento de competências como ﬂuência em espanhol, adaptabilidade e trabalho em equipe, além do aperfeiçoamento do inglês. 
                     </Typography>
-                    <Typography variant='body1' paragraph sx={{ color: 'rgba(180, 180, 200, 0.9)', fontSize: '1.1rem', lineHeight: 1.8 }}>
+                    <Typography variant='body1' paragraph sx={{ color: 'rgba(3, 1, 1, 0.9)', fontSize: '1.2rem', lineHeight: 1.8 }}>
                         Tenho foco em criar soluções inovadoras e centradas no usuário, 
                         seguindo metodologias ágeis com habilidades fortes em comunicação e trabalho em equipe, agregando valor e promovendo resultados de impacto.
                     </Typography>
                 </Box>
 
-                    {/* Cards extras */}
-
+                    {/* Linha do tempo*/}
                 <Box sx={{ 
                 display: 'flex', 
                 gap: 6,
@@ -130,8 +113,8 @@ const AboutSkills = () => {
                         width: '60px', 
                         height: '60px', 
                         borderRadius: '50%',
-                        background: 'rgba(25, 25, 35, 0.8)',
-                        border: '3px solid rgba(120, 120, 140, 0.5)',
+                        background: 'rgba(147, 147, 147, 0.8)',
+                        border: '3px solid rgba(32, 32, 33, 0.9)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -143,10 +126,10 @@ const AboutSkills = () => {
                             boxShadow: '0 0 20px rgba(100, 100, 120, 0.5)',
                         }
                     }}>
-                        <CodeIcon sx={{ color: 'rgba(200, 200, 220, 0.9)', fontSize: 30 }} />
+                        <CodeIcon sx={{ color: 'rgba(32, 32, 33, 0.9)', fontSize: 30 }} />
                     </Box>
                     <Typography variant="h5" sx={{ 
-                        color: 'rgba(200, 200, 220, 0.95)', 
+                        color: 'rgba(3, 1, 1, 0.9)', 
                         mb: 1,
                         fontWeight: 600,
                         textAlign: 'center'
@@ -154,7 +137,7 @@ const AboutSkills = () => {
                         Experiência
                     </Typography>
                     <Typography sx={{ 
-                        color: 'rgba(150, 150, 170, 0.7)',
+                        color: 'rgba(3, 1, 1, 0.9)',
                         textAlign: 'center',
                         lineHeight: 1.6
                     }}>
@@ -174,8 +157,8 @@ const AboutSkills = () => {
                         width: '60px', 
                         height: '60px', 
                         borderRadius: '50%',
-                        background: 'rgba(25, 25, 35, 0.8)',
-                        border: '3px solid rgba(120, 120, 140, 0.5)',
+                        background: 'rgba(147, 147, 147, 0.8)',
+                        border: '3px solid rgba(32, 32, 33, 0.9)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -187,10 +170,10 @@ const AboutSkills = () => {
                             boxShadow: '0 0 20px rgba(100, 100, 120, 0.5)',
                         }
                     }}>
-                        <SchoolIcon sx={{ color: 'rgba(200, 200, 220, 0.9)', fontSize: 30 }} />
+                        <SchoolIcon sx={{ color: 'rgba(32, 32, 33, 0.9)', fontSize: 30 }} />
                     </Box>
                     <Typography variant="h5" sx={{ 
-                        color: 'rgba(200, 200, 220, 0.95)', 
+                        color: 'rgba(3, 1, 1, 0.9)', 
                         mb: 1,
                         fontWeight: 600,
                         textAlign: 'center'
@@ -198,7 +181,7 @@ const AboutSkills = () => {
                         Formação
                     </Typography>
                     <Typography sx={{ 
-                        color: 'rgba(150, 150, 170, 0.7)',
+                        color: 'rgba(3, 1, 1, 0.9)',
                         textAlign: 'center',
                         lineHeight: 1.6
                     }}>
@@ -218,8 +201,8 @@ const AboutSkills = () => {
                         width: '60px', 
                         height: '60px', 
                         borderRadius: '50%',
-                        background: 'rgba(25, 25, 35, 0.8)',
-                        border: '3px solid rgba(120, 120, 140, 0.5)',
+                        background: 'rgba(147, 147, 147, 0.8)',
+                        border: '3px solid rgba(32, 32, 33, 0.9)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -231,10 +214,10 @@ const AboutSkills = () => {
                             boxShadow: '0 0 20px rgba(100, 100, 120, 0.5)',
                         }
                     }}>
-                        <WorkIcon sx={{ color: 'rgba(200, 200, 220, 0.9)', fontSize: 30 }} />
+                        <WorkIcon sx={{ color: 'rgba(32, 32, 33, 0.9)', fontSize: 30 }} />
                     </Box>
                     <Typography variant="h5" sx={{ 
-                        color: 'rgba(200, 200, 220, 0.95)', 
+                        color: 'rgba(3, 1, 1, 0.9)', 
                         mb: 1,
                         fontWeight: 600,
                         textAlign: 'center'
@@ -242,19 +225,18 @@ const AboutSkills = () => {
                         Projetos
                     </Typography>
                     <Typography sx={{ 
-                        color: 'rgba(150, 150, 170, 0.7)',
+                        color: 'rgba(3, 1, 1, 0.9)',
                         textAlign: 'center',
                         lineHeight: 1.6
                     }}>
                         10+ projetos entregues com sucesso, desde e-commerce até dashboards analíticos complexos
                     </Typography>
+                    </Box>
                 </Box>
-            </Box>
 
 
                 {/* SEÇÃO SKILLS */}
                 
-
                 <Box 
                     sx={{ 
                         display: 'flex', 
@@ -273,16 +255,17 @@ const AboutSkills = () => {
                                 fontSize: '1rem', 
                                 py: 2.5,
                                 px: 2,
-                                background: 'rgba(25, 25, 35, 0.6)',
+                                background: 'rgba(0, 0, 0, 0.6)',
                                 backdropFilter: 'blur(10px)',
-                                color: 'rgba(200, 200, 220, 0.95)',
-                                border: '1px solid rgba(100, 100, 120, 0.3)',
+                                color: 'rgba(202, 202, 207, 0.95)',
+                                border: '1px solid rgba(54, 54, 57, 0.3)',
                                 fontWeight: 600,
                                 letterSpacing: '0.5px',
                                 transition: 'all 0.3s ease',
                                 '&:hover': {
-                                    background: 'rgba(100, 100, 120, 0.2)',
+                                    background: 'rgba(30, 30, 31, 0.2)',
                                     border: '1px solid rgba(120, 120, 140, 0.5)',
+                                    color: 'rgba(39, 38, 38, 0.95)',
                                     transform: 'translateY(-4px)',
                                     boxShadow: '0 4px 20px rgba(60, 60, 80, 0.4)',
                                 }
