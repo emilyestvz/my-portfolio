@@ -117,7 +117,7 @@ const Hero = () => {
     return (
         <>
             {/* Navbar */}
-            <StyledNavbar position='fixed'>
+            <StyledNavbar position='absolute'>
                 <Toolbar sx={{ justifyContent: 'space-between' }}>
                     <Typography variant='h6' sx={{ 
                         fontWeight: 700, 

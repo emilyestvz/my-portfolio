@@ -5,7 +5,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 
 const StyledAbout = styled('div')(() => ({
-    background: 'linear-gradient(135deg, #b9b9baff 0%, #7a7a7dff 50%, #898989ff 100%)',
+    background: 'linear-gradient(135deg, #b9b9baff 0%, #c2c2c4ff 50%, #b9b9baff 100%)',
     minHeight: '100vh',
     display: 'flex',
     alignItems: 'center',
@@ -70,15 +70,23 @@ const AboutSkills = () => {
                         borderRadius: '16px',
                     }}
                 >
-                    <Typography variant='body1' paragraph sx={{ color: 'rgba(3, 1, 1, 0.9)', fontSize: '1.2rem', lineHeight: 1.8 }}>
-                        Atualmente em transição de carreira para a área de tecnologia, graduando em Engenharia de Software e 
-                        busco oportunidades para aplicar minhas habilidades em desenvolvimento FullStack utilizando stacks modernas. 
-                        Minha vivência internacional na Espanha contribuiu para o desenvolvimento de competências como ﬂuência em espanhol, adaptabilidade e trabalho em equipe, além do aperfeiçoamento do inglês. 
+                    <Typography variant='body1' paragraph sx={{ color: 'rgba(3, 1, 1, 0.9)', fontSize: '1.2rem', lineHeight: 1.3 }}>
+                        Olá! Estou em uma emocionante transição de carreira para o universo da tecnologia, onde atualmente curso Engenharia de Software. 
+                        Sou apaixonada por desenvolvimento fullstack e busco oportunidades para colocar em prática minhas habilidades usando stacks modernas e inovadoras.
                     </Typography>
-                    <Typography variant='body1' paragraph sx={{ color: 'rgba(3, 1, 1, 0.9)', fontSize: '1.2rem', lineHeight: 1.8 }}>
-                        Tenho foco em criar soluções inovadoras e centradas no usuário, 
-                        seguindo metodologias ágeis com habilidades fortes em comunicação e trabalho em equipe, agregando valor e promovendo resultados de impacto.
+                    <Typography variant='body1' paragraph sx={{ color: 'rgba(3, 1, 1, 0.9)', fontSize: '1.2rem', lineHeight: 1.3 }}>
+                        Minha experiência internacional na Espanha foi fundamental para ampliar meu repertório: além de aprimorar meu espanhol e inglês, 
+                        desenvolvi uma grande adaptabilidade e o espírito colaborativo, essenciais para qualquer equipe de alta performance.
                     </Typography>
+                    <Typography variant='body1' paragraph sx={{ color: 'rgba(3, 1, 1, 0.9)', fontSize: '1.2rem', lineHeight: 1.3 }}>
+                        Com foco em criar soluções que realmente importam para o usuário, atuo guiada por metodologias ágeis e valorizo muito uma comunicação clara e trabalho em equipe. 
+                        Estou pronta para contribuir com valor real e alcançar resultados significativos em projetos desafiadores.
+                    </Typography>
+                    <Typography variant='body1' paragraph sx={{ color: 'rgba(3, 1, 1, 0.9)', fontSize: '1.2rem', lineHeight: 1.3}}>
+                        Vamos juntos transformar ideias em soluções? ✨
+                    </Typography>
+
+                    
                 </Box>
 
                     {/* Linha do tempo*/}

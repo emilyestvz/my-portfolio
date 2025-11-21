@@ -59,14 +59,14 @@ const projects = [
     {
         title: 'Aerial Odyssey',
         description: 'Meu primeiro jogo com Python e Pygame, estilo FlappyBird, onde você controla um personagem que deve sobreviver em um ambiente perigoso.',
-        image: '/src/assets/video-aerial.mp4',
+        image: '/src/assets/aerialodyssey1.jpg',
         tags: ['Python', 'Pygame', 'Game Development'],
         github: 'https://github.com/emilyestvz/project_aerial_odyssey',
         demo: '#',
     },
     {
         title: 'Vammo!',
-        description: 'Projeto para Generation: Aplicativo de carona campartilhada com foco em sustentabilidade e economia colaborativa.',
+        description: 'Projeto em equiope para Generation: Aplicativo de carona campartilhada com foco em sustentabilidade e economia colaborativa.',
         image: '/src/assets/vammo-img.png',
         tags: ['React', 'Node.js', 'MongoDB', 'Native', 'TypeScript'],
         github: 'https://github.com/projetointegrador-g3/vammo_react',
