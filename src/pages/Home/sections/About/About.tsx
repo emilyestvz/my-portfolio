@@ -1,5 +1,5 @@
 // AboutSkills.tsx (novo arquivo combinado)
-import { Container, Box, Typography, Grid, Chip, styled } from '@mui/material';
+import { Container, Box, Typography, Chip, styled } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
